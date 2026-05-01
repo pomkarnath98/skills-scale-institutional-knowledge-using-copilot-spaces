@@ -17,24 +17,35 @@ Guidance for managing day-to-day execution and tracking progress toward project 
   - Require at least one approval before merging (or team-defined policy)
 
 ## Quality & Testing
-- Unit tests for new logic
-- Integration tests where applicable
-- End-to-end smoke tests for critical flows before release
-- Security scanning in CI
-- Manual QA for feature acceptance when needed
+- **Unit tests** for new logic — written by Developers with QA Automation Engineer input on coverage goals
+- **Integration tests** where applicable — coordinated with QA Automation Engineer
+- **End-to-end smoke tests** for critical flows before release — owned by QA Automation Engineer
+- **Security scanning** in CI — triggered during PR workflow, escalated to Security Lead if issues found
+- **Manual QA** for feature acceptance when needed — coordinated between Developers, QA Automation Engineer, and UX Designer for usability verification
+- **Accessibility testing** — led by UX Designer, validated by QA Automation Engineer
+
+## Testing Responsibilities
+- **Developers:** Write unit tests, assist with testability, review test failures
+- **QA Automation Engineer:** Design test strategy, maintain automation frameworks, set coverage targets, validate readiness
+- **UX Designer:** Coordinate usability and accessibility testing
+- **Security Lead:** Review security test coverage, escalate findings
 
 ## Reporting & Metrics
 - Track velocity and burndown
 - Monitor success metrics identified in the Project One-pager
 - Use dashboards for key signals (errors, latency, usage)
+- **Quality metrics:** Test coverage, automation pass rate, defect escape rate
+- **Delivery metrics:** Cycle time, PR review time, rollback rate
 
 ## Blocker Escalation
 - Level 1: Team-level triage in daily standup
-- Level 2: PM escalates to Product Lead and dependent teams
+- Level 2: PM escalates to Product Lead and dependent teams; escalate security blockers to Security Lead
 - Level 3: Sponsor-level escalation for business-impacting issues
 
 ## Execution Checklist
 - [ ] Branching and PR conventions documented in repo
-- [ ] CI configured for tests and lint
+- [ ] CI configured for tests, lint, and security scanning
+- [ ] Test strategy and QA Automation approach documented
 - [ ] Regular demos scheduled
-- [ ] Risk register updated weekly
+- [ ] Risk register updated weekly (including security and quality risks)
+- [ ] Accessibility compliance approach defined with UX Designer
